@@ -75,6 +75,7 @@ add_executable(pubvel pubvel.cpp)
 add_executable(subpose subpose.cpp)
 add_executable(count count.cpp)
 add_executable(anon anon.cpp)
+add_executable(revs sixth/reverseTurtlesim/reverseCmd_vel.cpp)
 
 ## Add cmake target dependencies of the executable/library
 # add_dependencies(agitr_node agitr_generate_messages_cpp)
@@ -83,8 +84,8 @@ target_link_libraries(hello ${catkin_LIBRARIES})
 target_link_libraries(pubvel ${catkin_LIBRARIES})
 target_link_libraries(subpose ${catkin_LIBRARIES})
 target_link_libraries(count ${catkin_LIBRARIES})
-target_link_libraries(anon
- ${catkin_LIBRARIES})
+target_link_libraries(anon ${catkin_LIBRARIES})
+target_link_libraries(revs ${catkin_LIBRARIES})
 
 
 #############
@@ -134,3 +135,4 @@ target_link_libraries(anon
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+

@@ -1,0 +1,27 @@
+<launch>
+	<node
+		pkg="turtlesim"
+		type="turtlesim_node"
+		name="turtlesim"
+	>
+	<remap
+		from="turtle1/cmd_vel"
+		to="turtle1/cmd_vel_reversed"
+	/>
+	</node>
+	
+	<node
+		pkg="turtlesim"
+		type="turtle_teleop_key"
+		name="teleop_key"
+		launch-prefix="xterm -e"
+	/>
+	<node
+		pkg="agitr"
+		type="revs"
+		name="reverse_velocity"
+	/>
+</launch>
+
+
+

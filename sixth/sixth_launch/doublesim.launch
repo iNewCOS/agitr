@@ -1,0 +1,27 @@
+<launch>
+	<node
+		pkg="turtlesim"
+		type="turtlesim_node"
+		name="turtlesim_n"
+		ns="sim1"
+	/>
+	<node 
+		pkg="turtlesim"
+		type="turtle_teleop_key"
+		name="teleop_k"
+		launch-prefix="xterm -e"
+		ns="sim1"
+	/>
+	<node 
+		pkg="turtlesim"
+		name="turtlesim_node"
+		type="turtlesim_node"
+		ns="sim2"
+	/>
+	<node
+		pkg="agitr"
+		type="pubvel"
+		name="velocity_publisher"
+		ns="sim2"
+	/>
+</launch>

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(agitr)
 
-find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs turtlesim)
+find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs std_srvs turtlesim)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -76,6 +76,8 @@ add_executable(subpose subpose.cpp)
 add_executable(count count.cpp)
 add_executable(anon anon.cpp)
 add_executable(revs sixth/reverseTurtlesim/reverseCmd_vel.cpp)
+add_executable(set_bg_color seventh/set_bg_color.cpp)
+add_executable(pubvel_with_max seventh/pubvel_with_max.cpp)
 
 ## Add cmake target dependencies of the executable/library
 # add_dependencies(agitr_node agitr_generate_messages_cpp)
@@ -86,7 +88,8 @@ target_link_libraries(subpose ${catkin_LIBRARIES})
 target_link_libraries(count ${catkin_LIBRARIES})
 target_link_libraries(anon ${catkin_LIBRARIES})
 target_link_libraries(revs ${catkin_LIBRARIES})
-
+target_link_libraries(set_bg_color ${catkin_LIBRARIES})
+target_link_libraries(pubvel_with_max ${catkin_LIBRARIES})
 
 #############
 ## Install ##
